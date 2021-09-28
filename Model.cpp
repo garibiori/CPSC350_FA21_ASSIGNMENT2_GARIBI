@@ -59,7 +59,7 @@ string Model::translateSingleCharacter(char letter)
     }
     else if (letter == 'N')
     {
-        word = "Num";
+        word = "Nun";
     }
     else if (letter == 'P')
     {
@@ -219,6 +219,7 @@ string Model::translateSingleCharacter2(string word){
     string letterTrans2;
     string letterTrans3;
     string letterTrans4;
+    string letterTrans5;
     string transWord;
 
     for(int i=0;i<word.length(); ++i){
@@ -236,7 +237,25 @@ string Model::translateSingleCharacter2(string word){
         letterTrans3 += word[i+4];
         letterTrans4+= word[i];
         letterTrans4+= word[i+1];
-        if(letterTrans == "Bub" || letterTrans == "Dud" || letterTrans == "Fuf"|| letterTrans == "Gug" || letterTrans == "Jay" || letterTrans == "Lul"|| letterTrans == "Mum" || letterTrans == "Nun" || letterTrans == "Pub" || letterTrans == "Rug"|| letterTrans == "Sus" || letterTrans == "Tut" || letterTrans == "Vuv" || letterTrans == "Yub" || letterTrans == "Zub"){
+        letterTrans5 += toupper(word[i]);
+        letterTrans5 += word[i+1];
+        letterTrans5 += word[i+2];
+        letterTrans5 += word[i+3];
+        letterTrans5 += word[i+4];
+        letterTrans5 += word[i+5];
+        letterTrans5 += word[i+6];
+        if(letterTrans5 == "Squatut"){
+            if(word[i]=='S'){
+                transWord += 'T';
+                i+=3;
+            }
+            else if(word[i]=='s'){
+                transWord += 't';
+                i+=3;
+            }
+            letterTrans5.clear();
+        }
+        else if(letterTrans == "Bub" || letterTrans == "Dud" || letterTrans == "Fuf"|| letterTrans == "Gug" || letterTrans == "Jay" || letterTrans == "Lul"|| letterTrans == "Mum" || letterTrans == "Nun" || letterTrans == "Pub" || letterTrans == "Rug"|| letterTrans == "Sus" || letterTrans == "Tut" || letterTrans == "Vuv" || letterTrans == "Yub" || letterTrans == "Zub"){
             transWord+= word[i];
             i+=2;
             letterTrans.clear();
@@ -269,6 +288,7 @@ string Model::translateSingleCharacter2(string word){
         letterTrans2.clear();
         letterTrans3.clear();
         letterTrans4.clear();
+        letterTrans5.clear();
     }
     return transWord;
 }

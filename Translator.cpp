@@ -26,7 +26,7 @@ string Translator::translateEnglishWord(string word)
         if(toupper(word[i]) == toupper(letterSim)){
             transWord+= sp->translateDoubleCharacter(letter); //points to double character function if there are double characters
             i = i+1;
-            transWord+=tolower(word[i]);
+            transWord+=sp->translateSingleCharacter(tolower(letter));
         }
         else if(letter!=' '){
             transWord+= sp->translateSingleCharacter(letter); //points to translating single characters
@@ -51,11 +51,6 @@ string Translator::translateEnglishSentence(string phrase)
             letter = phrase[i];
         
             notLetter += letter;
-            /*
-            if(letter == ' '){
-                word +=translateEnglishWord(notLetter);
-                phrase.erase(0,notLetter.length());
-            }*/
       
     }
     word +=translateEnglishWord(notLetter);
