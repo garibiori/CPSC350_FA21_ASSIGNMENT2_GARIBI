@@ -13,13 +13,13 @@ FileProcessor::~FileProcessor()
     //default destructor
 }
 
-string FileProcessor::processFile()
+string FileProcessor::processFile(string file)
 {
     char data[500];
 
     // open and read the input file
     ifstream infile;
-    infile.open("English");
+    infile.open(file);
     int count = 0;
 
     string sentence;
@@ -54,13 +54,13 @@ string FileProcessor::processFile()
     return outputParagraph;
 }
 
-string FileProcessor::processFile2()
+string FileProcessor::processFile2(string file)
 {
     char data[500];
 
     // open and read the input file
     ifstream infile;
-    infile.open("Tutnese");
+    infile.open(file);
     int count = 0;
 
     string sentence;
@@ -83,7 +83,7 @@ string FileProcessor::processFile2()
 
     //open an output file
     ofstream English;
-    English.open("English2");
+    English.open("EnglishTranslation");
 
     cout << "Writing to the file:" << endl;
 

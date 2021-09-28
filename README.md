@@ -9,7 +9,7 @@ README Assignment 2
 2. no sources were used
 
 3. make all
-./assignment2.exe E2T //for English to Tutnese
-./assignment2.exe T2E //for Tutnese to English
+./assignment2.exe English E2T //for English to Tutnese
+./assignment2.exe Tutnese T2E //for Tutnese to English
 
 

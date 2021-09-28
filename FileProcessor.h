@@ -8,6 +8,6 @@ class FileProcessor
 public:
     FileProcessor(); //default constructor
     ~FileProcessor(); //destructor
-    string processFile();
-    string processFile2();
+    string processFile(string input);
+    string processFile2(string input);
 };
