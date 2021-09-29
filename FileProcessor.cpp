@@ -13,7 +13,7 @@ FileProcessor::~FileProcessor()
     //default destructor
 }
 
-string FileProcessor::processFile(string file)
+string FileProcessor::processFile(string file) //takes in a file from the command line and outputs a new file
 {
     char data[500];
 
@@ -54,7 +54,7 @@ string FileProcessor::processFile(string file)
     return outputParagraph;
 }
 
-string FileProcessor::processFile2(string file)
+string FileProcessor::processFile2(string file) //takes in a file from the command line and outputs a new file
 {
     char data[500];
 
@@ -76,7 +76,7 @@ string FileProcessor::processFile2(string file)
     infile >> inputLine;
 
     Translator *sp = new Translator;
-    string outputParagraph = sp->translateEnglishSentence2(inputLine); //points to the translate english sentence 2 function
+    string outputParagraph = sp->translateTutneseSentence(inputLine); //points to the translate english sentence 2 function
 
     //close the inputted file.
     infile.close();

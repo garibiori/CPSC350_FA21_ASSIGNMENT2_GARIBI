@@ -15,15 +15,15 @@ Translator::~Translator()
 
 string Translator::translateEnglishWord(string word)
 {
-    //returns only single words
+    //returns only single words by finding spaces and sends them to translate single and double characters
     Model *sp = new Model;
     char letter;
     string transWord;
     char letterSim;
-    for(int i = 0; i < word.length(); ++i){
+    for(int i = 0; i < word.length(); ++i){ 
         letter = word[i];
         letterSim = word[i+1];
-        if(toupper(word[i]) == toupper(letterSim)){
+        if(toupper(word[i]) == toupper(letterSim)){ //finds double characters
             transWord+= sp->translateDoubleCharacter(letter); //points to double character function if there are double characters
             i = i+1;
             transWord+=sp->translateSingleCharacter(tolower(letter));
@@ -43,7 +43,7 @@ string Translator::translateEnglishWord(string word)
 
 string Translator::translateEnglishSentence(string phrase)
 {   
-    //returns the whole phrase
+    //returns the whole phrase and sends it to translate english word
     char letter;
     string word;
     string notLetter;
@@ -59,9 +59,9 @@ string Translator::translateEnglishSentence(string phrase)
     
 }
 
-string Translator::translateEnglishWord2(string word)
+string Translator::translateTutneseWord(string word)
 {
-    //returns only single words
+    //returns only single words and sends them to translate single and double characters
     Model *sp = new Model;
     char letter;
     string singleWord;
@@ -81,7 +81,7 @@ string Translator::translateEnglishWord2(string word)
 }
 
 
-string Translator::translateEnglishSentence2(string phrase)
+string Translator::translateTutneseSentence(string phrase)
 {   
     //returns the whole phrase
     char letter;
@@ -94,7 +94,7 @@ string Translator::translateEnglishSentence2(string phrase)
             
       
     }
-    word +=translateEnglishWord2(notLetter);
+    word +=translateTutneseWord(notLetter);
     return word;
     
 }

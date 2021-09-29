@@ -2,7 +2,7 @@
 #include "FileProcessor.h"
 
 
-int main(int argc, char* argv[])
+int main(int argc, char* argv[]) //takes in command line arguments for file inputs and translation
 {
     if(argv[2] == string("E2T")){
         //calls the process file function as a pointer

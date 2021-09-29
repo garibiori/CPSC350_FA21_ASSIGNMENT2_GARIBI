@@ -14,7 +14,7 @@ Model::~Model()
 
 string Model::translateSingleCharacter(char letter)
 {
-    //translates a single character in the word
+    //translates a single character in the word by translating each character
     string word = "";
     string newPhrase = "";
     if (letter == 'B')
@@ -195,7 +195,7 @@ string Model::translateSingleCharacter(char letter)
 
 string Model::translateDoubleCharacter(char letter)
 {
-    //looks for double characters and translates them
+    //looks for double characters and translates them by placing squat or squa in front of them
     string output;
     if(letter == 'E' || letter == 'A' || letter == 'I' || letter == 'O' || letter == 'U'){
         output = "Squat";
@@ -214,7 +214,7 @@ string Model::translateDoubleCharacter(char letter)
 
 
 string Model::translateSingleCharacter2(string word){
-    //looks for single character translations and untranslates them
+    //looks for single character translations and untranslates them by iterating through the string
     string letterTrans;
     string letterTrans2;
     string letterTrans3;
@@ -244,7 +244,7 @@ string Model::translateSingleCharacter2(string word){
         letterTrans5 += word[i+4];
         letterTrans5 += word[i+5];
         letterTrans5 += word[i+6];
-        if(letterTrans5 == "Squatut"){
+        if(letterTrans5 == "Squatut"){ //this is used to make squatut into tt
             if(word[i]=='S'){
                 transWord += 'T';
                 i+=3;
@@ -296,7 +296,7 @@ string Model::translateSingleCharacter2(string word){
 
 
 string Model::translateDoubleCharacter2(string word){
-    //looks for double character translations and changes them back to the original letters
+    //looks for double character translations and changes them back to the original letters by iterating through the string and finding squa and squat
     char letter;
     string transWord;
     string letterSim;
@@ -306,8 +306,7 @@ string Model::translateDoubleCharacter2(string word){
         letterSim += toupper(word[i]);
         letterSim +=  word[i+1];
         letterSim += word[i+2];
-        letterSim += word[i+3];
-        
+        letterSim += word[i+3];  
         if(letterSim == "Squa" && word[i+4] != 't'){
             if(word[i] == 'S'){
                 transWord+=toupper(word[i+4]);
@@ -332,9 +331,6 @@ string Model::translateDoubleCharacter2(string word){
             i+=5;
             letterSim.clear();
         }
-        
-       
-        
         else{
             transWord+=letter;
             letterSim.clear();

@@ -8,6 +8,6 @@ public:
     ~Translator(); //destructor
     string translateEnglishWord(string input);
     string translateEnglishSentence(string input);
-    string translateEnglishWord2(string input);
-    string translateEnglishSentence2(string input);
+    string translateTutneseWord(string input);
+    string translateTutneseSentence(string input);
 };
