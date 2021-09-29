@@ -13,7 +13,7 @@ FileProcessor::~FileProcessor()
     //default destructor
 }
 
-string FileProcessor::processFile(string file) //takes in a file from the command line and outputs a new file
+string FileProcessor::processFile(string file, string output) //takes in a file from the command line and outputs a new file
 {
     char data[500];
 
@@ -42,7 +42,7 @@ string FileProcessor::processFile(string file) //takes in a file from the comman
 
     //open an output file
     ofstream Tutnese;
-    Tutnese.open("Tutnese");
+    Tutnese.open(output);
 
     cout << "Writing to the file:" << endl;
 
@@ -54,7 +54,7 @@ string FileProcessor::processFile(string file) //takes in a file from the comman
     return outputParagraph;
 }
 
-string FileProcessor::processFile2(string file) //takes in a file from the command line and outputs a new file
+string FileProcessor::processFile2(string file, string output) //takes in a file from the command line and outputs a new file
 {
     char data[500];
 
@@ -83,7 +83,7 @@ string FileProcessor::processFile2(string file) //takes in a file from the comma
 
     //open an output file
     ofstream English;
-    English.open("EnglishTranslation");
+    English.open(output);
 
     cout << "Writing to the file:" << endl;
 
