@@ -1,3 +1,11 @@
+/**
+ * The Translator class sends words to the Model class
+ * 
+ * @author Ori Garibi
+ * @version 1.0
+ * @see Translator.cpp
+ * 
+ */
 #include <iostream> 
 using namespace std;
 
